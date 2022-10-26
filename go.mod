@@ -1,3 +1,8 @@
-module github.com/LeandroMello091085/simulador-golang
+module github.com/LeandroMelloo/simulador-golang
 
 go 1.16
+
+require (
+	github.com/confluentinc/confluent-kafka-go v1.9.2
+	github.com/joho/godotenv v1.4.0
+)

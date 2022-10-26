@@ -1,7 +1,21 @@
 package main
 
-import route2 "github.com/LeandroMelloo/simulador-golang/application/route"
+import (
+	"log"
+
+	"github.com/LeandroMelloo/simulador-golang/infra/kafka"
+	"github.com/joho/godotenv"
+)
+
+func init() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+}
 
 func main() {
-	route := route2.Route{}
+
+	producer := kafka.NewKafkaProducer()
+	kafka.Publish("ola", "readteste", producer)
 }
